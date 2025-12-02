@@ -1,5 +1,7 @@
 package com.example.hanyuhub_backend.repository;
 
+import java.util.Optional;
+
 //import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +14,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, String> {
 
     // (Opcional) si quieres validar existencia sin traer el usuario
     boolean existsByMailAndPass(String mail, String pass);
+
+    // Buscar usuario por mail
+    Optional<Usuario> findByMail(String mail);
 }
